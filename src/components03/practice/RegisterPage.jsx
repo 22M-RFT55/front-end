@@ -12,53 +12,55 @@ const data = [
     { id: 3, name: '삼성 스타일러', price: 150000},
 ]
 
-const initForm = {name:'엘지 TV', price: 2000000};
+const initForm = {name:'엘지 TV', price:2000000};
 
 const RegisterPage = () => {
-
     const [products, setProducts] = useState(data);
     const [form, setForm] = useState(initForm);
     const {name, price} = form;
-    const idRef = useRef();
+    const idRef = useRef(4);
+
+    const onChaneForm = (e) => {
+        setForm({...form, [e.target.name]:e.target.value});
+    }
     
-    // form의 내용이 바뀔 때
-    const onChangeForm = (e) => {
-        setForm({
-            ...form,
-            [e.target.name] : e.target.value
-        })
+    const onRegister = (e) => {
+        e.preventDefault();
+        const data = products.concat({...form, id:idRef.current++});
+        setProducts(data);
     }
 
-    // 등록 버튼을 클릭 할 때
-    const onClickRegister = (e) => {
+    const onCancel = (e) => {
         e.preventDefault();
-        setProducts([...products, form]);
+        setForm(initForm);
+    }
+
+    const onRemove = (e, id) => {
+        e.preventDefault();
+        const data = products.filter(p => p.id !== id);
+        setProducts(data);
     }
 
     return (
-
         <div className='box'>
             <h1>상품등록</h1>
-            <form>
-                <input onChange={onChangeForm}
-                    value={name}
-                    placeholder='상품이름' name='name'/>
-                <input onChange={onChangeForm}
-                    value={price}
-                    placeholder='상품가격' name='price' type='number' step={1000}/>
+            <form onSubmit={onRegister} onReset={onCancel}>
+                <input onChange={onChaneForm}
+                    value={name} placeholder='상품이름' name='name'/>
+                <input onChange={onChaneForm}
+                    value={price} placeholder='상품가격' name='price' type='number' step={1000}/>
                 <div>
-                    <button onSubmit={onClickRegister} type='submit'>등록</button>
-                    <button type='reset'>취소</button>
+                    <button type='submit' disabled={!name || !price}>등록</button>
+                    <button type='reset' disabled={JSON.stringify(form) === JSON.stringify(initForm)}>취소</button>
                 </div>
             </form>
-            <h1 style={{marginTop: '30px'}}>상품목록</h1>
             <table>
                 <tbody>
-                    {products.map(p =>
-                        <tr key = {p.id}>
+                    {products.map(p => 
+                        <tr key='p.id' onContextMenu={(e) => onRemove(e, p.id)}>
                             <td>{p.id}</td>
                             <td>{p.name}</td>
-                            <td>{p.price}</td>
+                            <td>{parseInt(p.price).toLocaleString()}</td>
                         </tr>
                     )}
                 </tbody>

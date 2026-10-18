@@ -8,11 +8,10 @@ import Header from './Header'
 import Content from './Content'
 import Footer from './Footer'
 
-
 const MainPage = () => {
     return (
-        <div>
-            <h1 style={{textAlign: 'center', marginTop: '50px'}}>홈페이지</h1>
+        <div style={{textAlign:'center'}}>
+            <h1>홈페이지</h1>
             <Header/>
             <Content/>
             <Footer/>

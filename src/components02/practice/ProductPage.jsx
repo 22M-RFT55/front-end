@@ -14,15 +14,20 @@ const products = [
 const ProductPage = () => {
     return (
         <div className='box'>
-            <h1 style = {{textAlign: 'center'}}>상품목록</h1>
+            <h1 style={{ textAlign: 'center' }}>상품목록</h1>
             <table>
                 <tbody>
-                    {products.map(pro =>
-                        <Product key={pro.id} p = {pro}/>
+                    {products.map(p =>
+                        <React.Fragment key={p.id}>
+                            <Product pro={p} />
+                            <tr>
+                                <td colSpan={3}>{p.description}</td>
+                            </tr>
+                        </React.Fragment>
                     )}
                 </tbody>
             </table>
-        </div>
+        </div >
     )
 }
 export default ProductPage

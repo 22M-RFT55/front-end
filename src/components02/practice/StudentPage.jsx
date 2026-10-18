@@ -6,16 +6,15 @@ const students = [
     { id: 1, name: '홍길동', dept: '컴정과' },
     { id: 2, name: '심청이', dept: '전자과' },
     { id: 3, name: '이순신', dept: '건축과' },
-    { id: 4, name: '조준혁', dept: '컴정과' }
+    { id: 4, name: '이순신', dept: '건축과' }
 ]
 
 const StudentPage = () => {
     return ( 
         <div className='box'>
             <h1>학생목록</h1>
-            {students.map(stu => 
-                <Student stu = {stu}/>
-                // <Student key={stu.id} student = {stu}/>
+            {students.map(s => 
+                <Student key={s.id} stu={s}/>
             )}
         </div>
     )

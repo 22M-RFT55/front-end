@@ -7,37 +7,12 @@ import React, { useRef, useState } from 'react'
 import '../Style03.css'
 
 const InfoPage = () => {
-
-    const [name, setName] = useState('Justin');
-    const [age, setAge] = useState(20);
-    const nameRef = useRef();
-
-    // 둥록 버튼을 클릭한 경우
-    const onClickRegister = () => {
-        alert(`${name}, ${age} 정보가 등록되었습니다.`);
-        nameRef.current.focus();
-    }
-
-    // 이름 입력 상자에서 엔터를 쳤을 때
-    const onKeyDown = (e) => {
-        if (e.key === 'Enter') {
-            onClickRegister();
-        }
-    }
-
     return (
         <div className='box'>
-            <h3>이름:{name} | 나이:{age}</h3>
-
-            <input ref={nameRef}
-                onChange={(e)=> setName(e.target.value)} 
-                value={name} placeholder='이름'/><br/>
-
-            <input onKeyDown={onKeyDown}
-                onChange={(e)=> setAge(e.target.value)} 
-                value={age} placeholder='나이' type='number' step={1}/><br/>
-
-            <button onClick={onClickRegister}>등록</button>
+            <h3>이름:? | 나이:?</h3>
+            <input placeholder='이름'/><br/>
+            <input placeholder='나이' type='number' setp={1}/><br/>
+            <button>등록</button>
         </div>
     )
 }

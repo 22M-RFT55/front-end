@@ -5,14 +5,14 @@ import '../Style01.css'
 
 const StylePage = () => {
     const style = {
-        fontSize: '30px',
-        fontFamily: '궁서체',
-        color: 'green'
+        color:'green',
+        fontFamily:'돋움체',
+        fontSize:'50px'
     }
     return (
         <div className='box'>
-            <h1 style={{fontSize:'50px', color: 'red'}}>안녕 리액트!</h1>
-            <h2 style={style}>저는 홍길동입니다.</h2>
+            <h1 className='hello'>안녕 리액트!</h1>
+            <h2 style={{color:'blue', fontFamily:'궁서체'}}>저는 홍길동입니다.</h2>
             <h3 style={style}>만나서 반갑습니다.</h3>
         </div>
     )

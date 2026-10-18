@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Product = ({ p }) => {
-    const { id, name, price, description } = p;
+const Product = ({ pro }) => {
+    const { id, name, price } = pro
 
     return (
         <>
@@ -10,9 +10,8 @@ const Product = ({ p }) => {
                 <td>{name}</td>
                 <td>{parseInt(price).toLocaleString()}</td>
             </tr>
-
-            <tr style={{backgroundColor : 'gray', color: 'white'}}>
-                <td colSpan={3}>{description}</td>
+            <tr>
+                <td colSpan={3}>상품설명</td>
             </tr>
         </>
     )

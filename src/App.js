@@ -1,5 +1,6 @@
 import './App.css';
-import Component from './components06/practice/color/ColorPage'
+
+import Component from './components02/practice2/ProductPage'
 
 const App = ()=> {
     return (
