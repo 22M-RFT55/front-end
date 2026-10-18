@@ -6,20 +6,31 @@ import '../Style03.css'
 
 const CounterPage = () => {
     const [number, setNumber] = useState(0);
+    const onChange = (e) => {
+        setNumber(parseInt(e.target.value));
+    }
 
-    // 마우스 오른쪽 클릭했을 경우
+    const onClickLeft = (e) => {
+        setNumber(number + 1);
+    }
+
     const onClickRight = (e) => {
         e.preventDefault();
-        setNumber(number-1);
+        setNumber(number - 1)
     }
-    
+
+    const keyDown = (e) => {
+        if(e.key === 'Enter') alert(`현재값 : ${number}`);
+    }
+
     return (
         <div className='box'>
-            <input onChange={(e)=>setNumber(parseInt(e.target.value))}
-                value={number} 
+            <input value={number}
+                onChange={onChange}
+                onKeyDown={keyDown}
                 style={{width:'100px'}} type='number'/>
-            <button onClick={()=> setNumber(number+1)}
-                    onContextMenu={onClickRight}>증감</button>
+            <button onClick={onClickLeft}
+                onContextMenu={onClickRight}>증감</button>
         </div>
     )
 }

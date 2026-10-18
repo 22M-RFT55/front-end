@@ -7,7 +7,7 @@ import '../../Style06.css'
 import Page from './Page'
 
 const RootPage = () => {
-    const [dark, setDark ]= useState(false);
+    const [dark, setDark]= useState(false);
     return (
         <div>
             <Page dark={dark} setDark={setDark}/>

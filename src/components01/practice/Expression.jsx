@@ -6,28 +6,23 @@ import '../Style01.css'
 const Expression = () => {
     const name='Chris';
     const age = 30;
-    const job = 'Programer';
-    const isLogin = false;
+    const job = '';
+    const isLogin = true;
     const student = {name, age};
     const person = {...student, job};
     
     return (
         <div className='box'>
             <h1>변수값 출력</h1>
-            <h3>NAME : {name}, AGE : {age+1}, JOB : {job}, {isLogin.toString()}</h3>
-
+            <div>{name}, {age + 1}, {job || '무직'}</div>
             <h1>삼항 연산자</h1>
-            {isLogin ? <button>Logout</button> : <button>Login</button>} 
-
+            {isLogin ? <botton>로그아웃</botton> : <botton>로그인</botton>}
             <h1>AND 연산자</h1>
-            {isLogin && <h3>NAME : {name}</h3>}
-           
+            {isLogin && <div>{name}, {age}, {job || '무직'}</div>}
             <h1>OR 연산자</h1>
-            {name || <h3>No Name</h3>}
-         
+            {isLogin  || <div>로그인 하세요!</div>}
             <h1>스프레드 연산자</h1>
-            <h3>{person.name}, {person.age}, {person.job}</h3>
-
+            <div>{person.name}, {person.age}, {person.job || '무직'}</div>
         </div>
     )
 }

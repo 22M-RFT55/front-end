@@ -1,11 +1,9 @@
 import React from 'react'
 
 const Header = () => {
-    return (
-        <div>
-                <img src='/main.jpg' width='100%'/>
-        </div>
-    )
+  return (
+    <div><img src='http://placehold.co/960x150'/></div>
+  )
 }
 
 export default Header

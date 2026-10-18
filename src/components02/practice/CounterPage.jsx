@@ -5,27 +5,17 @@ import React, { useState } from 'react'
 import '../Style02.css'
 
 const CounterPage = () => {
-    // let number = 0;
+    //let number = 0;
     const [number, setNumber] = useState(0);
-
-    // 1씩 증가하는 함수
     const onIncrease = () => {
-        // number++;
-        // console.log("Number : ", number);
-
         setNumber(number + 1);
+        console.log(number);
     }
-
-    // 1씩 감소하는 함수
-    const onDecrease = () => {
-        setNumber(number - 1);
-    }
-
 
     return (
         <div className='box'>
             <h1>{number}</h1>
-            <button onClick={onDecrease}>감소</button>
+            <button onClick={() => setNumber(number - 1)}>감소</button>
             <button onClick={onIncrease}>증가</button>
         </div>
     )
