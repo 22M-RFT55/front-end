@@ -1,6 +1,6 @@
 import './App.css';
 
-import Component from './components08/practice/MainRouter'
+import Component from './components09/practice/MainRouter'
 
 const App = ()=> {
     return (
