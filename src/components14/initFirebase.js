@@ -8,13 +8,13 @@ import { getAnalytics } from "firebase/analytics";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASEKEY,
-  authDomain: "inha-46136.firebaseapp.com",
-  databaseURL: "https://inha-46136-default-rtdb.firebaseio.com",
-  projectId: "inha-46136",
-  storageBucket: "inha-46136.firebasestorage.app",
-  messagingSenderId: "533804388879",
-  appId: "1:533804388879:web:c8bfc7513927d87d46897a",
-  measurementId: "G-C1PWWJV0PQ"
+  authDomain: "inhatc-react.firebaseapp.com",
+  databaseURL: "https://inhatc-react-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "inhatc-react",
+  storageBucket: "inhatc-react.firebasestorage.app",
+  messagingSenderId: "685305337154",
+  appId: "1:685305337154:web:bee27c03a178c90c0424db",
+  measurementId: "G-BNWQG3GQX4"
 };
 
 // Initialize Firebase
